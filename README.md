@@ -1,13 +1,16 @@
-# CorstestServer
+# Corstest.com server
 
-To start your new Phoenix application you have to:
+This is the server behind [Corstest.com](http://www.corstest.com)
 
-1. Install dependencies with `mix deps.get`
-2. Start Phoenix router with `mix phoenix.start`
+### Requirements
 
-Now you can visit `localhost:4000` from your browser.
+- Elixir v1.0.0+
 
+## Run a development server
 
-## Notes
+```bash
+mix do deps.get, compile
+mix phoenix.start
+```
 
-* If you choose to change the application's structure, you could manually start the router from your code like this `CorstestServer.Router.start`
+More info on the Phoenix web framework at https://github.com/phoenixframework/phoenix
