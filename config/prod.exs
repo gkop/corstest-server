@@ -11,8 +11,10 @@ use Mix.Config
 
 config :phoenix, CorstestServer.Router,
   port: System.get_env("PORT"),
-  ssl: false,
-  host: "example.com",
+  ssl: System.get_env("CORS_TEST_SSL_ENABLED"),
+  keyfile: System.get_env("CORS_TEST_SSL_KEY"),
+  certfile: System.get_env("CORS_TEST_SSL_CERT"),
+  host: "corstest-api.coshx.com",
   cookies: true,
   session_key: "_corstest_server_key",
   session_secret: "TL6P*U24+=*S+WW*T67NRZ_K_N*+LV9RU+LV^C=43DH)*EDQ!KC@!76GP%1RFF9!*$)"
