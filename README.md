@@ -1,6 +1,6 @@
 # Corstest.com server
 
-This is the server behind [Corstest.com](http://www.corstest.com)
+This is the server behind [Corstest.com](https://www.corstest.com)
 
 ### Requirements
 
