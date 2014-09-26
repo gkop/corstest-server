@@ -1,0 +1,27 @@
+{
+  "name": "corstest-server",
+  "version": "0.0.0",
+  "description": "Corstest.com SPDY backend",
+  "main": "node_spdy_server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gkop/corstest-server.git"
+  },
+  "keywords": [
+    "spdy"
+  ],
+  "author": "Gabe Kopley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkop/corstest-server/issues"
+  },
+  "dependencies": {
+    "spdy": "~> 1.28.1"
+  }
+}
