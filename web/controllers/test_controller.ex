@@ -8,6 +8,19 @@ defmodule CorstestServer.TestController do
     json conn, JSON.encode!(%{sum: a+b})
   end
 
+  def preflight_cors_options(conn, _params) do
+    conn = Plug.Conn.put_resp_header(conn, "access-control-allow-origin", "*")
+    conn = Plug.Conn.put_resp_header(conn, "access-control-allow-headers", "x-a, x-b")
+    Plug.Conn.send_resp(conn, 200, "")
+  end
+
+  def preflight_cors(conn, _params) do
+    conn = Plug.Conn.put_resp_header(conn, "access-control-allow-origin", "*")
+    {a, ""} = Integer.parse(hd(Plug.Conn.get_req_header(conn, "x-a")))
+    {b, ""} = Integer.parse(hd(Plug.Conn.get_req_header(conn, "x-b")))
+    json conn, JSON.encode!(%{sum: a+b})
+  end
+
   def eventsource(conn, _params) do
     conn = Plug.Conn.put_resp_header(conn, "access-control-allow-origin", "*")
     conn = Plug.Conn.put_resp_content_type(conn, "text/event-stream")
