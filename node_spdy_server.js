@@ -3,8 +3,8 @@ var spdy = require('spdy'),
     url = require('url');
 
 var options = {
-  key: fs.readFileSync("/home/gabe/corstest-api_coshx_com.key"),
-  cert: fs.readFileSync("/home/gabe/corstest-api_coshx_com_bundle.crt"),
+  key: fs.readFileSync(process.env.CORS_TEST_SSL_KEY),
+  cert: fs.readFileSync(process.env.CORS_TEST_SSL_CERT),
 
   // **optional** SPDY-specific options
   windowSize: 1024 * 1024, // Server's window size
@@ -58,4 +58,4 @@ var server = spdy.createServer(options, function(req, res) {
   }
 });
 
-server.listen(4002);
+server.listen(4000);
